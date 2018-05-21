@@ -1,6 +1,5 @@
 package controller;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,20 +45,13 @@ public class AuthorController {
 
 	@RequestMapping("/register")
 	public String register(ModelMap md,HttpSession session, @RequestParam("username") String username,@RequestParam("password") String password,
-			@RequestParam("repassword") String repassword,@RequestParam("password") String email) {
-		if(username == cliDAO.getCli(username).getUsername()) {
-			md.addAttribute("error", "tài khoản đã tồn tại");
-			return "author/signup";
-		}else if(password!=repassword){
-			md.addAttribute("error", "Xác thực mật khẩu không đúng");
-			return "uthor/signup";
-		}else {
-		boolean kq = cliDAO.insertCli(username, password, repassword, email);
+			@RequestParam("repassword") String repassword,@RequestParam("email") String email) {
+		boolean kq = cliDAO.insertCli(username, password, email);
 		if(kq ==true) {
 			return "author/success";
 		}else {
-			return "uthor/signup";
-		}}
+			return "author/signup";
+		}
 	
 	}
 

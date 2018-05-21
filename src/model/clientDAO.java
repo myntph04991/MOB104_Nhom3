@@ -44,11 +44,11 @@ SessionFactory factory;
 
 	}
 	
-	public boolean insertCli(String username,String password,String repassword,String email) {
+	public boolean insertCli(String username,String password,String email) {
 		Session session = factory.openSession();
 		Transaction tr = session.beginTransaction();
 		try {		
-		CLIENT cli = new CLIENT(username, repassword, null, false, null, email, null, null, "client");
+		CLIENT cli = new CLIENT(username, password, null, false, null, email, null, null, "client");
 		session.save(cli);
 		tr.commit();
 		return true;		

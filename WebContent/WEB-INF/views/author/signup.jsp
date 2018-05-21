@@ -20,7 +20,7 @@
 			<div class="col-sm-8" style="border-right: solid 1px #929090">
 				<form class="form-horizontal" action="register.htm" style="margin-right: 20px">
 					<div class="row" style="text-align: right; margin-bottom: 10px; color: red">Bạn bắt buộc nhập đầy đủ thông tin bên dưới</div>
-					<div><a style="color: #f00">${errorr }</a> </div>
+					<div><a style="color: #f00">${error }</a> </div>
 					<div class="form-group">
 						<label for="tendangnhap" class="control-label col-sm-4">Tên đăng nhập:</label>
 						<div class="col-sm-8">
